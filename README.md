@@ -22,15 +22,17 @@ you only now need :
 ##### ansible all -m gather_facts:
 - When ansible connects to a server, it actually pulls a list of information of that server and it includes the information about their OS, CPU, the environment variables...
 - This command will output all infos related to any server that the ansible worksatation has connected to.
-- Using option --limit <ins>@ip_address_of_server</ins>: something like this ansible all -m gather_facts --limit 192.168.100.149
+- Using option --limit <ins>@ip_address_of_server</ins>: 
+example: ***ansible all -m gather_facts --limit 192.168.100.149**
 
 >[!NOTE]
 >Before creating a playbook i manipulated some commands:
 >**ansible all -m apt -a name=vim-nox --become --ask-become-pass**
->Runs on all hosts in the inventory
->Uses the apt module to install the vim-nox package
->Requests sudo privileges (--become)
->Prompts for the sudo password (--ask-become-pass)
+> *Runs on all hosts in the inventory.
+> *Uses the apt module to install the vim-nox package
+> *Requests sudo privileges (--become)
+> *Prompts for the sudo password (--ask-become-pass)
+
 >**ansible all -m apt -a "name=snapd state=latest" --become --ask-become-pass**
 >using " " to pass more than one argument
 

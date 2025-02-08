@@ -36,5 +36,25 @@ example: ***ansible all -m gather_facts --limit 192.168.100.149**
 >**ansible all -m apt -a "name=snapd state=latest" --become --ask-become-pass**
 >using " " to pass more than one argument
 
+-----------------------------------
+on workstation :
+after sshing the servers
+-------------------------
+ ls -la .ssh on worksation
+--------------------------
+using keys in ssh connection because it is more secure
+
+ssh-keygen -t ed25519 -C "ansible"
+=>generating  and u can check with ls -la .ssh
+
+ssh-copy-id -i ~/.ssh/id_ed25519.pub @ipof worker
+
+eval $(ssh-agent)
+-->doesnt not require passphrase again during the session
+---------------------------------------
+-->permanently
+alias ssha='eval $(ssh-agent) && ssh-add'
+then type ssha
+----> nano .bashrc and add the alias above into  that file
 
 

@@ -57,4 +57,10 @@ alias ssha='eval $(ssh-agent) && ssh-add'
 then type ssha
 ----> nano .bashrc and add the alias above into  that file
 
+#### ad-hoc Commands
 
+ansible all -m apt -a update_cache=true --become --ask-become-pass
+
+ansible all -m apt -a "name=snapd state=latest" --become --ask-become-pass
+
+ansible all -m gather_facts

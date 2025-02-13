@@ -1,0 +1,18 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+#  - name: Update repository index
+#    apt:
+#      update_cache: yes
+#    when: ansible_distribution == "Ubuntu"
+
+  - name: Install Apache and Php package
+    package:
+      name:
+        - "{{ apache_package }}"
+        - "{{ php_package }}"
+#the above variables should be declared in the inventory file defining 
+#for each host the appropriate package name to install accordingly

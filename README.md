@@ -1,4 +1,4 @@
-# ansible-mini-project
+8# ansible-mini-project
 ansible all --key-file ~/.ssh/ansible -i inventory -m ping
 #### ansible all :
 It runs Ansible on all hosts defined in the inventory file.
@@ -64,3 +64,4 @@ ansible all -m apt -a update_cache=true --become --ask-become-pass
 ansible all -m apt -a "name=snapd state=latest" --become --ask-become-pass
 
 ansible all -m gather_facts
+ansible-galaxy init my_role
